@@ -1,0 +1,19 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.search {
+  width: 200px;
+  height: 30px;
+  border-radius: 50px;
+}
