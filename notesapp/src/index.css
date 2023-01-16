@@ -107,3 +107,19 @@
 .btn5 {
   background-color: green;
 }
+
+.noteList {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.note {
+  width: 150px;
+  height: 100px;
+}
+
+.noteF {
+  width: 150px;
+  height: 30px;
+}
