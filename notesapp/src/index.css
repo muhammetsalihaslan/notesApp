@@ -115,11 +115,28 @@
 }
 
 .note {
-  width: 150px;
-  height: 100px;
+  width: 200px;
+}
+
+.note2 {
+  position: relative;
+  margin-left: 10px;
 }
 
 .noteF {
+  text-align: center;
   width: 150px;
   height: 30px;
+}
+
+.destroy {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 8px;
+}
+
+.toggle {
+  width: 20px;
+  height: auto;
 }
