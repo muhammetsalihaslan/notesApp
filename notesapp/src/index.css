@@ -1,6 +1,6 @@
 * {
   background-color: rgb(234, 234, 234);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
@@ -114,29 +114,34 @@
   max-width: 1024px;
 }
 
-.note {
-  width: 200px;
-}
-
 .note2 {
+  width: 200px;
   position: relative;
-  margin-left: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .noteF {
   text-align: center;
-  width: 150px;
+  width: 200px;
   height: 30px;
+  background-color: white;
 }
 
 .destroy {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 15px;
+  right: 15px;
   padding: 8px;
 }
 
 .toggle {
   width: 20px;
   height: auto;
+}
+
+.noteT {
+  background-color: white;
 }
