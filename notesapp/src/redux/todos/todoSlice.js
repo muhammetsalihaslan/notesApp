@@ -12,7 +12,7 @@ export const todoSlice = createSlice({
       {
         id: "2",
         title: "I will go to cinema next week",
-        completed: true,
+        completed: false,
       },
     ],
   },

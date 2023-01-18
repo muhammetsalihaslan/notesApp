@@ -6,16 +6,18 @@ const NoteList = () => {
   const noteTodos = useSelector(selectTodos);
 
   return (
-    <div className="noteList">
+    <ul className="noteList">
       {noteTodos.map((item) => (
-        <div className="note2" key={item.id}>
-          <div className="noteF">Note {item.id}</div>
-          <input className="toggle" type="checkbox" />
-          <label className="noteT">{item.title}</label>
-          <button className="destroy"></button>
-        </div>
+        <li key={item.id} className={item.completed ? "completed" : ""}>
+          <div className="note2">
+            <div className="noteF">Note {item.id}</div>
+            <input className="toggle" type="checkbox" />
+            <label className="noteT">{item.title}</label>
+            <button className="destroy"></button>
+          </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
