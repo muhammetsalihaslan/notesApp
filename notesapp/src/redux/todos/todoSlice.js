@@ -1,4 +1,4 @@
-import { CreateSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const todoSlice = createSlice({
   name: "todos",
@@ -16,5 +16,9 @@ export const todoSlice = createSlice({
       },
     ],
   },
-  reducer: {},
+  reducers: {},
 });
+
+export const selectTodos = (state) => state.todos.items;
+
+export default todoSlice.reducer;
