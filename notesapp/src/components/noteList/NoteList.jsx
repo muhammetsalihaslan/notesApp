@@ -1,12 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectTodos } from "../../redux/todos/todoSlice";
-import { toggle } from "../../redux/todos/todoSlice";
+import { toggle, destroy } from "../../redux/todos/todoSlice";
 import { useDispatch } from "react-redux";
 
 const NoteList = () => {
   const dispatch = useDispatch();
   const noteTodos = useSelector(selectTodos);
+
+  const handleDestroy = (id) => {
+    if (window.confirm(`Are you sure`)) {
+      dispatch(destroy(id));
+    }
+  };
 
   return (
     <ul className="noteList">
@@ -21,7 +27,10 @@ const NoteList = () => {
               checked={item.completed}
             />
             <label className="noteT">{item.title}</label>
-            <button className="destroy"></button>
+            <button
+              className="destroy"
+              onClick={() => handleDestroy(item.id)}
+            ></button>
           </div>
         </li>
       ))}
