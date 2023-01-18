@@ -110,11 +110,12 @@
 
 .noteList {
   display: flex;
-
+  flex-wrap: wrap;
   margin-top: 10px;
   width: 100%;
   max-width: 1024px;
   list-style-type: none;
+  gap: 5px;
 }
 
 .note2 {
@@ -124,7 +125,6 @@
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
-  margin-left: 10px;
 }
 
 .noteF {

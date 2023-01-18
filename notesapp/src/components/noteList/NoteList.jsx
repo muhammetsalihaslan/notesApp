@@ -10,7 +10,7 @@ const NoteList = () => {
       {noteTodos.map((item) => (
         <li key={item.id} className={item.completed ? "completed" : ""}>
           <div className="note2">
-            <div className="noteF">Note {item.id}</div>
+            <div className="noteF">Note </div>
             <input className="toggle" type="checkbox" />
             <label className="noteT">{item.title}</label>
             <button className="destroy"></button>

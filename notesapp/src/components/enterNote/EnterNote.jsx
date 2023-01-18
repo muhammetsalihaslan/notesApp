@@ -1,10 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { addTodo } from "../../redux/todos/todoSlice";
+import { nanoid } from "@reduxjs/toolkit";
 
 const EnterNote = () => {
   const [title, setTitle] = useState("");
   const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addTodo({ id: nanoid(), title, completed: false }));
+    setTitle("");
+  };
 
   return (
     <form className="enter">
@@ -23,7 +31,9 @@ const EnterNote = () => {
           <input type="button" className="btn btn5" />
         </div>
         <div className="buttons2">
-          <button className="addB">ADD</button>
+          <button className="addB" onClick={handleSubmit}>
+            ADD
+          </button>
         </div>
       </div>
     </form>
