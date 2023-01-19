@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../redux/todos/todoSlice";
-import { nanoid } from "@reduxjs/toolkit";
 
 const EnterNote = () => {
   const [title, setTitle] = useState("");
@@ -11,7 +10,7 @@ const EnterNote = () => {
   const handleSubmit = (e) => {
     if (!title) return;
     e.preventDefault();
-    dispatch(addTodo({ id: nanoid(), title, completed: false }));
+    dispatch(addTodo({ title }));
     setTitle("");
   };
 
