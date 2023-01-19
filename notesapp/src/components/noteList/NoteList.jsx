@@ -16,10 +16,10 @@ const NoteList = () => {
 
   return (
     <ul className="noteList">
-      {noteTodos.map((item) => (
+      {noteTodos.map((item, index) => (
         <li key={item.id} className={item.completed ? "completed" : ""}>
           <div className="note2">
-            <div className="noteF">Note </div>
+            <div className="noteF">Note {index + 1} </div>
             <input
               className="toggle"
               type="checkbox"
