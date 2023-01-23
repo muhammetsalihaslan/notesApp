@@ -1,12 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectTodos } from "../../redux/todos/todoSlice";
+import { filterTodos, selectTodos } from "../../redux/todos/todoSlice";
 import { toggle, destroy } from "../../redux/todos/todoSlice";
 import { useDispatch } from "react-redux";
 
 const NoteList = () => {
   const dispatch = useDispatch();
   const noteTodos = useSelector(selectTodos);
+  const filteredText = useSelector(filterTodos);
+
+  const filtered = noteTodos.filter((item) => {
+    return Object.keys(item).some((key) =>
+      item[key].toString().toLowerCase().includes(filteredText.toLowerCase())
+    );
+  });
 
   const handleDestroy = (id) => {
     if (window.confirm(`Are you sure`)) {
@@ -16,7 +23,7 @@ const NoteList = () => {
 
   return (
     <ul className="noteList">
-      {noteTodos.map((item, index) => (
+      {filtered.map((item, index) => (
         <li key={item.id} className={item.completed ? "completed" : ""}>
           <div className="note2">
             <div className="noteF">Note {index + 1} </div>

@@ -1,11 +1,12 @@
 import React from "react";
-import { useState } from "react";
-import { filtered } from "../../redux/todos/todoSlice";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
+import { filterTodos } from "../../redux/todos/todoSlice";
+import { findNote } from "../../redux/todos/todoSlice";
 
 const Search = () => {
-  const [filterText, setFilterText] = useState("");
   const dispatch = useDispatch();
+  const filtered = useSelector(filterTodos);
 
   return (
     <div>
@@ -13,8 +14,8 @@ const Search = () => {
         className="search"
         type="text"
         placeholder="Search..."
-        value={filterText}
-        onChange={(e) => setFilterText(dispatch(filtered()))}
+        value={filtered}
+        onChange={(e) => dispatch(findNote(e.target.value))}
       />
     </div>
   );

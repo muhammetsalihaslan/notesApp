@@ -15,6 +15,7 @@ export const todoSlice = createSlice({
         completed: false,
       },
     ],
+    filtered: "",
   },
   reducers: {
     addTodo: {
@@ -41,22 +42,15 @@ export const todoSlice = createSlice({
       const filtered = state.items.filter((item) => item.id !== id);
       state.items = filtered;
     },
-    filtered: (state, action) => {
-      const filtered = state.items.filter((item) => {
-        return Object.keys(item).some((key) =>
-          item[key]
-            .toString()
-            .toLowerCase()
-            .includes(action.toLocaleLowerCase())
-        );
-      });
-      state.items = filtered;
+    findNote: (state, action) => {
+      state.filtered = action.payload;
     },
   },
 });
 
 export const selectTodos = (state) => state.todos.items;
+export const filterTodos = (state) => state.todos.filtered;
 
-export const { addTodo, toggle, destroy, filtered } = todoSlice.actions;
+export const { addTodo, toggle, destroy, findNote } = todoSlice.actions;
 
 export default todoSlice.reducer;
