@@ -41,11 +41,22 @@ export const todoSlice = createSlice({
       const filtered = state.items.filter((item) => item.id !== id);
       state.items = filtered;
     },
+    filtered: (state, action) => {
+      const filtered = state.items.filter((item) => {
+        return Object.keys(item).some((key) =>
+          item[key]
+            .toString()
+            .toLowerCase()
+            .includes(action.toLocaleLowerCase())
+        );
+      });
+      state.items = filtered;
+    },
   },
 });
 
 export const selectTodos = (state) => state.todos.items;
 
-export const { addTodo, toggle, destroy } = todoSlice.actions;
+export const { addTodo, toggle, destroy, filtered } = todoSlice.actions;
 
 export default todoSlice.reducer;
